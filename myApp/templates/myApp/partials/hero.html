@@ -1,0 +1,128 @@
+<!-- 1. HERO — Composed Layout (No orphan rows, copy intact) -->
+<section class="min-h-screen bg-gradient-to-b from-[#2A627D] to-[#0F2E32] relative overflow-hidden grain-overlay">
+  <!-- Blur orbs for depth -->
+  <div class="absolute top-16 right-16 w-[28rem] h-[28rem] bg-white/10 blur-orb rounded-full"></div>
+  <div class="absolute -bottom-10 left-10 w-[26rem] h-[26rem] bg-black/15 blur-orb rounded-full"></div>
+
+  <div class="relative z-10 min-h-screen flex items-center px-6 md:px-12 py-24">
+    <div class="max-w-7xl mx-auto w-full">
+
+      <!-- Use a 12-col grid so everything aligns precisely -->
+      <div class="grid grid-cols-12 gap-y-14 lg:gap-x-12 items-center">
+
+        <!-- Left: Copy Block -->
+        <div class="col-span-12 lg:col-span-6 fade-in text-white">
+          <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
+            I’ve been where you are now.
+          </h1>
+
+          <div class="text-lg md:text-xl leading-relaxed space-y-6 mb-10 max-w-xl">
+            <p>
+              Taking care of everyone on the outside,<br>
+              but quietly falling apart inside.<br>
+              Longing for something more.
+            </p>
+
+            <p>
+              You don’t need to have it all figured out.<br>
+              You just need someone who’s been there and knows the way.
+            </p>
+
+            <p>
+              I’ll walk with you — grounded, compassionate, and present.<br>
+              One step at a time.
+            </p>
+
+            <p class="text-white/90">
+              Because I know what it takes to find your way back home to your Self.<br>
+              And it’s a shortcut. Saving lifetime and life-energy.
+            </p>
+          </div>
+
+          <!-- Action row (feels like one unit, not two separate items) -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
+            <a href="#contact"
+               class="inline-flex justify-center items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-xl text-white hover:bg-white/25 transition-all">
+              <i class="fa-solid fa-calendar-check"></i>
+              Schedule a 1:1 Discovery Call
+            </a>
+
+            <a href="#journey"
+               class="inline-flex justify-center items-center gap-2 bg-white/0 border border-white/25 px-6 py-3 rounded-xl text-white/90 hover:text-white hover:bg-white/10 transition-all">
+              Read the journey
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Visual Composition Panel -->
+        <div class="col-span-12 lg:col-span-6 fade-in-delay">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-7 shadow-2xl">
+
+            <!-- Portrait -->
+            <div class="relative overflow-hidden rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&h=1100&fit=crop&q=85"
+                alt="Christoph Erbel"
+                class="w-full h-[22rem] md:h-[26rem] object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
+
+              <!-- Nameplate -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-white/12 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white">
+                  <div class="text-sm font-semibold tracking-wide">Christoph Erbel</div>
+                  <div class="text-xs text-white/85">Systemic Life Mentor</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Credibility (NO orphan rows) -->
+            <!-- Mobile: stacked | md: 2 columns | xl: 3 columns -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+              <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white">
+                <div class="flex items-center gap-2 text-sm font-semibold mb-1">
+                  <i class="fa-solid fa-heart-pulse text-white/90"></i>
+                  <span>Lived Work</span>
+                </div>
+                <div class="text-xs text-white/85 leading-snug">
+                  Nearly 20 years of personal healing & growth.
+                </div>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white">
+                <div class="flex items-center gap-2 text-sm font-semibold mb-1">
+                  <i class="fa-solid fa-link text-white/90"></i>
+                  <span>Bridge Path</span>
+                </div>
+                <div class="text-xs text-white/85 leading-snug">
+                  Initiated as Chaka Runa — a bridge between worlds.
+                </div>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white md:col-span-2 xl:col-span-1">
+                <div class="flex items-center gap-2 text-sm font-semibold mb-1">
+                  <i class="fa-solid fa-globe text-white/90"></i>
+                  <span>Facilitation</span>
+                </div>
+                <div class="text-xs text-white/85 leading-snug">
+                  Seminars, workshops & retreats across continents.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bottom aligned scroll indicator (belongs to layout, not floating/bouncy) -->
+        <div class="col-span-12 flex justify-center lg:justify-start lg:col-span-6 lg:col-start-1">
+          <a href="#shift" class="inline-flex items-center gap-2 text-white/70 hover:text-white/90 transition-colors">
+            <span class="text-xs uppercase tracking-[0.22em]">Scroll</span>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
