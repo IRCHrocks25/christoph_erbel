@@ -1,4 +1,5 @@
-<section class="relative overflow-hidden bg-white">
+{% load static %}
+<section id="offerings" class="relative overflow-hidden bg-white">
   <!-- atmosphere -->
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute inset-0 bg-gradient-to-b from-[#EAF4F3]/55 via-white to-white"></div>
@@ -21,7 +22,7 @@
       <article class="group rounded-[28px] bg-white/70 backdrop-blur shadow-sm ring-1 ring-[#0B1B2A]/10 overflow-hidden">
         <div class="relative h-48">
           <img
-            src="https://images.unsplash.com/photo-1520975958225-1b2a6f153b14?auto=format&fit=crop&w=1600&q=60"
+            src="{% static 'myApp/images/mentoring & coaching.png' %}"
             alt=""
             class="h-full w-full object-cover"
           />
@@ -44,7 +45,7 @@
       <article class="group rounded-[28px] bg-white/70 backdrop-blur shadow-sm ring-1 ring-[#0B1B2A]/10 overflow-hidden">
         <div class="relative h-48">
           <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=60"
+            src="{% static 'myApp/images/online seminars.png' %}"
             alt=""
             class="h-full w-full object-cover"
           />
@@ -67,7 +68,7 @@
       <article class="group rounded-[28px] bg-white/70 backdrop-blur shadow-sm ring-1 ring-[#0B1B2A]/10 overflow-hidden">
         <div class="relative h-48">
           <img
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=60"
+            src="{% static 'myApp/images/retreats.png' %}"
             alt=""
             class="h-full w-full object-cover"
           />
@@ -90,7 +91,7 @@
       <article class="group rounded-[28px] bg-white/70 backdrop-blur shadow-sm ring-1 ring-[#0B1B2A]/10 overflow-hidden">
         <div class="relative h-48">
           <img
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=60"
+            src="{% static 'myApp/images/healing journey.png' %}"
             alt=""
             class="h-full w-full object-cover"
           />

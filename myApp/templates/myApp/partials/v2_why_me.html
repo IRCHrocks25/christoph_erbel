@@ -1,4 +1,5 @@
-<section class="relative overflow-hidden bg-[#EAF4F3]">
+{% load static %}
+<section id="believes" class="relative overflow-hidden bg-[#EAF4F3]">
   <!-- atmosphere -->
   <div class="pointer-events-none absolute inset-0">
     <div class="absolute inset-0 bg-gradient-to-b from-white/45 via-transparent to-white/25"></div>
@@ -23,18 +24,24 @@
           For me, it was always important that the teachers I learned from shared the same values I believe in. And that is why I want you to know what kind of attitude I live by.
         </p>
 
-        <!-- Dummy anchor image (replace later) -->
-        <div class="mt-10 overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#0B1B2A]/10">
-          <img
-            src="https://images.unsplash.com/photo-1520975682031-ae3a6f0b1f7e?auto=format&fit=crop&w=1800&q=60"
-            alt=""
-            class="h-[320px] w-full object-cover"
-          />
-          <div class="h-px w-full bg-[#0B1B2A]/10"></div>
-          <!-- tiny caption bars (no text) -->
-          <div class="p-5">
-            <div class="h-2 w-36 rounded-full bg-[#0B1B2A]/10"></div>
-            <div class="mt-2 h-2 w-24 rounded-full bg-[#1FA37F]/25"></div>
+        <!-- Images -->
+        <div class="mt-10 space-y-6">
+          <!-- First image -->
+          <div class="overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#0B1B2A]/10">
+            <img
+              src="{% static 'myApp/images/Section Image.png' %}"
+              alt=""
+              class="h-[600px] w-full object-cover"
+            />
+          </div>
+          
+          <!-- Second image -->
+          <div class="overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#0B1B2A]/10">
+            <img
+              src="{% static 'myApp/images/Section Image (1).png' %}"
+              alt=""
+              class="h-[320px] w-full object-cover"
+            />
           </div>
         </div>
       </div>
