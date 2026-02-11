@@ -1,0 +1,206 @@
+{% load static %}
+<!-- Photo Journey Section -->
+<section id="photo-journey" class="relative overflow-hidden bg-[#EAF4F3]">
+  <!-- soft atmosphere -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/30"></div>
+    <div class="absolute -top-56 left-1/2 h-[760px] w-[760px] -translate-x-1/2 rounded-full bg-white/70 blur-3xl"></div>
+    <div class="absolute -bottom-72 right-[-200px] h-[820px] w-[820px] rounded-full bg-[#2AAE8A]/10 blur-3xl"></div>
+    <div class="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_center,#0B1B2A_1px,transparent_1px)] bg-[length:30px_30px]"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <div class="mb-8 flex items-end justify-between gap-6">
+      <p class="text-xs uppercase tracking-[0.3em] text-[#6B8E8E] font-light"
+         style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
+        PHOTO JOURNEY
+      </p>
+
+      <!-- Controls -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button
+          id="pj-prev"
+          class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 hover:bg-white transition"
+          aria-label="Previous photos"
+          type="button"
+        >
+          <svg class="w-5 h-5 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <button
+          id="pj-next"
+          class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 hover:bg-white transition"
+          aria-label="Next photos"
+          type="button"
+        >
+          <svg class="w-5 h-5 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="relative">
+      <!-- Edge fade (premium) -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-[#EAF4F3] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 bg-gradient-to-l from-[#EAF4F3] to-transparent z-10"></div>
+
+      <div
+        id="pj-track"
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-2"
+        style="-webkit-overflow-scrolling: touch;"
+        aria-label="Photo journey carousel"
+      >
+        <!-- Slides (same images) -->
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image.png' %}" alt="Journey image 1" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-white/25 via-transparent to-transparent"></div>
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (1).png' %}" alt="Journey image 2" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (2).png' %}" alt="Journey image 3" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (3).png' %}" alt="Journey image 4" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (4).png' %}" alt="Journey image 5" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (5).png' %}" alt="Journey image 6" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (6).png' %}" alt="Journey image 7" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (7).png' %}" alt="Journey image 8" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (8).png' %}" alt="Journey image 9" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[520px] md:w-[640px]">
+          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
+            <img src="{% static 'myApp/images/Gallery Image (9).png' %}" alt="Journey image 10" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile controls -->
+      <div class="mt-6 flex sm:hidden items-center justify-center gap-4">
+        <button
+          id="pj-prev-mobile"
+          class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 active:scale-95 transition"
+          aria-label="Previous photos"
+          type="button"
+        >
+          <svg class="w-6 h-6 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <button
+          id="pj-next-mobile"
+          class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 active:scale-95 transition"
+          aria-label="Next photos"
+          type="button"
+        >
+          <svg class="w-6 h-6 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('pj-track');
+    const slides = Array.from(track?.querySelectorAll('.pj-slide') || []);
+    const prev = document.getElementById('pj-prev');
+    const next = document.getElementById('pj-next');
+    const prevM = document.getElementById('pj-prev-mobile');
+    const nextM = document.getElementById('pj-next-mobile');
+
+    if (!track || slides.length === 0) return;
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    const getClosestIndex = () => {
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+
+      slides.forEach((s, i) => {
+        const sCenter = s.offsetLeft + s.offsetWidth / 2;
+        const d = Math.abs(center - sCenter);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+
+      return best;
+    };
+
+    const scrollToIndex = (i) => {
+      const idx = clamp(i, 0, slides.length - 1);
+      const s = slides[idx];
+      const left = s.offsetLeft - (track.clientWidth / 2) + (s.offsetWidth / 2);
+      track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+    };
+
+    const onPrev = () => scrollToIndex(getClosestIndex() - 1);
+    const onNext = () => scrollToIndex(getClosestIndex() + 1);
+
+    prev?.addEventListener('click', onPrev);
+    next?.addEventListener('click', onNext);
+    prevM?.addEventListener('click', onPrev);
+    nextM?.addEventListener('click', onNext);
+
+    // Keyboard support when focused anywhere in the carousel
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); onPrev(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); onNext(); }
+    });
+
+    // Make track focusable for keyboard nav
+    track.setAttribute('tabindex', '0');
+  });
+</script>
