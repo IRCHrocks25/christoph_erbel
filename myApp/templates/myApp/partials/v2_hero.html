@@ -10,11 +10,11 @@
     <div class="flex items-center min-h-[500px] md:min-h-[600px] gap-8 lg:gap-12">
       
       <!-- Left: Text Content -->
-      <div class="text-left max-w-3xl relative z-10 flex-1">
+      <div class="hero-left-column text-left max-w-3xl relative z-10 flex-1">
         
         <!-- Large Serif Headline -->
         <h1 
-          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] text-[#1C7272] mb-6"
+          class="hero-headline text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] text-[#1C7272] mb-6"
           style="font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.01em;"
         >
           I've been where you are now.
@@ -22,7 +22,7 @@
 
         <!-- Secondary Paragraph -->
         <p 
-          class="text-lg sm:text-xl leading-[1.75] text-white/90 mb-6"
+          class="hero-paragraph-1 text-lg sm:text-xl leading-[1.75] text-white/90 mb-6"
           style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 400;"
         >
           Taking care of everyone on the outside, but quietly falling apart inside. Longing for something more.
@@ -30,7 +30,7 @@
 
         <!-- Final Body Paragraph -->
         <p 
-          class="text-base sm:text-lg leading-[1.75] text-white/85 max-w-2xl"
+          class="hero-paragraph-2 text-base sm:text-lg leading-[1.75] text-white/85 max-w-2xl"
           style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 300;"
         >
           You don't need to have it all figured out. You just need someone who's been there and knows the way. I'll walk with you, grounded, compassionate, and present. One step at a time. Because I know what it takes to find your way back home to your Self. And it's a shortcut. Saving lifetime and life-energy.
@@ -45,11 +45,11 @@
   </div>
 
   <!-- ===== Right: Hero Image (Centered Pull Logic) ===== -->
-  <div class="hidden md:flex absolute bottom-0 left-1/2 translate-x-[2%] w-1/2 max-w-2xl h-full z-10 items-end justify-start">
+  <div class="hero-right-column hidden md:flex absolute bottom-0 left-1/2 translate-x-[2%] w-1/2 max-w-2xl h-full z-10 items-end justify-start">
     <img 
       src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770810865/hero_image_bqobex.png" 
       alt="Hero"
-      class="h-[85%] w-auto object-contain"
+      class="hero-image h-[85%] w-auto object-contain"
     />
   </div>
 
@@ -59,5 +59,101 @@
   #v2-hero p {
     orphans: 2;
     widows: 2;
+  }
+
+  /* Split-screen column animation - columns coming together */
+  .hero-left-column {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInFromLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .hero-right-column {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+  }
+
+  .hero-image {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+    animation: slideInImage 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  }
+
+  /* Staggered text animations */
+  .hero-headline {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+  }
+
+  .hero-paragraph-1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.7s forwards;
+  }
+
+  .hero-paragraph-2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInImage {
+    0% {
+      opacity: 0;
+      transform: translateX(100px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth entrance for the entire hero section */
+  #v2-hero {
+    animation: heroEntrance 0.8s ease-out;
+  }
+
+  @keyframes heroEntrance {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 </style>
