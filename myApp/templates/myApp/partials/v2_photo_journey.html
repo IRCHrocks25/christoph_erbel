@@ -1,4 +1,4 @@
-<!-- Photo Journey Section -->
+<!-- Photo Journey — Infinite Moving Carousel (side-by-side, keeps moving) -->
 <section id="photo-journey" class="relative overflow-hidden bg-[#EAF4F3]">
   <!-- soft atmosphere -->
   <div class="pointer-events-none absolute inset-0">
@@ -8,291 +8,166 @@
     <div class="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_center,#0B1B2A_1px,transparent_1px)] bg-[length:30px_30px]"></div>
   </div>
 
-  <div class="relative mx-auto max-w-5xl px-6 py-24 md:py-32">
+  <!-- Header with constrained width -->
+  <div class="relative mx-auto max-w-6xl px-6 pt-24 md:pt-32">
     <div class="mb-8 flex items-end justify-between gap-6">
       <p class="text-xs uppercase tracking-[0.3em] text-[#6B8E8E] font-light"
          style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;">
         PHOTO JOURNEY
       </p>
 
-      <!-- Controls -->
-      <div class="hidden sm:flex items-center gap-3">
-        <button
-          id="pj-prev"
-          class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 hover:bg-white transition"
-          aria-label="Previous photos"
-          type="button"
-        >
-          <svg class="w-5 h-5 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button
-          id="pj-next"
-          class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 hover:bg-white transition"
-          aria-label="Next photos"
-          type="button"
-        >
-          <svg class="w-5 h-5 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
+      <!-- Optional controls: speed toggle + direction -->
+      
     </div>
+  </div>
 
-    <!-- Carousel -->
-    <div class="relative">
-      <!-- Edge fade (premium) -->
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-[#EAF4F3] to-transparent z-10"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 bg-gradient-to-l from-[#EAF4F3] to-transparent z-10"></div>
+  <!-- Marquee frame - full width -->
+  <div class="relative pb-24 md:pb-32">
+    <!-- Edge fade (premium) -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-[#EAF4F3] to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-[#EAF4F3] to-transparent z-10"></div>
 
-      <div
-        id="pj-track"
-        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-2"
-        style="-webkit-overflow-scrolling: touch;"
-        aria-label="Photo journey carousel"
-      >
-        <!-- Slides (same images) -->
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999160/Gallery_Image_apci1q.png" alt="Journey image 1" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-white/25 via-transparent to-transparent"></div>
-          </div>
+    <div class="pj-marquee">
+      <!-- Track (we duplicate the list to loop seamlessly) -->
+      <div id="pj-track" class="pj-track">
+        <!-- Group A -->
+        <div class="pj-group">
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999160/Gallery_Image_apci1q.png" alt="Journey image 1"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_1_uegmou.png" alt="Journey image 2"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_2_e8coft.png" alt="Journey image 3"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_3_uoswql.png" alt="Journey image 4"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_4_ayscwv.png" alt="Journey image 5"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_5_xqkqbh.png" alt="Journey image 6"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_6_ilxmsf.png" alt="Journey image 7"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_7_bgycyn.png" alt="Journey image 8"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_8_a4mzv8.png" alt="Journey image 9"></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_9_o2ceul.png" alt="Journey image 10"></div>
         </div>
 
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_1_uegmou.png" alt="Journey image 2" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_2_e8coft.png" alt="Journey image 3" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_3_uoswql.png" alt="Journey image 4" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_4_ayscwv.png" alt="Journey image 5" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_5_xqkqbh.png" alt="Journey image 6" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_6_ilxmsf.png" alt="Journey image 7" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_7_bgycyn.png" alt="Journey image 8" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_8_a4mzv8.png" alt="Journey image 9" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <div class="pj-slide snap-center shrink-0 w-[86%] sm:w-[480px] md:w-[560px]">
-          <div class="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#0B1B2A]/8 h-[360px] md:h-[420px]">
-            <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_9_o2ceul.png" alt="Journey image 10" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
-          </div>
+        <!-- Group B (duplicate of A for seamless loop) -->
+        <div class="pj-group" aria-hidden="true">
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999160/Gallery_Image_apci1q.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_1_uegmou.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999157/Gallery_Image_2_e8coft.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_3_uoswql.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_4_ayscwv.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_5_xqkqbh.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_6_ilxmsf.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999158/Gallery_Image_7_bgycyn.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_8_a4mzv8.png" alt=""></div>
+          <div class="pj-card"><img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999159/Gallery_Image_9_o2ceul.png" alt=""></div>
         </div>
       </div>
 
-      <!-- Mobile controls -->
-      <div class="mt-6 flex sm:hidden items-center justify-center gap-4">
-        <button
-          id="pj-prev-mobile"
-          class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 active:scale-95 transition"
-          aria-label="Previous photos"
-          type="button"
-        >
-          <svg class="w-6 h-6 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <button
-          id="pj-next-mobile"
-          class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md ring-1 ring-[#0B1B2A]/10 active:scale-95 transition"
-          aria-label="Next photos"
-          type="button"
-        >
-          <svg class="w-6 h-6 text-[#2D5F6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
+      <!-- Optional: premium overlay shading -->
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/15 via-transparent to-transparent"></div>
     </div>
   </div>
 </section>
 
 <style>
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  /* Marquee container */
+  .pj-marquee{
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(11,27,42,0.08);
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 30px 80px -60px rgba(0,0,0,0.25);
+    padding: 18px 0;
+    width: 100%;
+  }
+
+  /* Track: moves continuously */
+  .pj-track{
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    will-change: transform;
+    animation: pj-marquee var(--pj-duration, 38s) linear infinite;
+    animation-direction: var(--pj-direction, normal);
+  }
+
+  /* Pause on hover (desktop) */
+  .pj-marquee:hover .pj-track{ animation-play-state: paused; }
+
+  /* Group holds the cards; duplicate group makes the loop seamless */
+  .pj-group{
+    display: flex;
+    gap: 18px;
+    padding-left: 18px;
+  }
+
+  /* Card sizing (premium, consistent) */
+  .pj-card{
+    flex: 0 0 auto;
+    width: 280px;
+    height: 180px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(11,27,42,0.08);
+    box-shadow: 0 16px 40px -30px rgba(0,0,0,0.28);
+    transform: translateZ(0);
+  }
+
+  @media (min-width: 640px){
+    .pj-card{ width: 360px; height: 230px; }
+  }
+  @media (min-width: 1024px){
+    .pj-card{ width: 440px; height: 280px; }
+  }
+
+  .pj-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* The trick: translate by exactly half the track (because we duplicated the list) */
+  @keyframes pj-marquee{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .pj-track{ animation: none; }
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('pj-track');
-    const slides = Array.from(track?.querySelectorAll('.pj-slide') || []);
-    const prev = document.getElementById('pj-prev');
-    const next = document.getElementById('pj-next');
-    const prevM = document.getElementById('pj-prev-mobile');
-    const nextM = document.getElementById('pj-next-mobile');
+    const slower = document.getElementById('pj-slower');
+    const faster = document.getElementById('pj-faster');
+    const reverse = document.getElementById('pj-reverse');
 
-    if (!track || slides.length === 0) return;
+    if (!track) return;
 
-    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+    // Defaults
+    let duration = 38;              // seconds
+    let direction = 'normal';       // normal | reverse
 
-    const getClosestIndex = () => {
-      const center = track.scrollLeft + track.clientWidth / 2;
-      let best = 0;
-      let bestDist = Infinity;
-
-      slides.forEach((s, i) => {
-        const sCenter = s.offsetLeft + s.offsetWidth / 2;
-        const d = Math.abs(center - sCenter);
-        if (d < bestDist) { bestDist = d; best = i; }
-      });
-
-      return best;
+    const apply = () => {
+      track.style.setProperty('--pj-duration', `${duration}s`);
+      track.style.setProperty('--pj-direction', direction);
     };
 
-    // --- TRUE smooth scrolling (eased), not native snap-jank ---
-    const easeInOutCubic = (t) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    slower?.addEventListener('click', () => { duration = Math.min(90, duration + 8); apply(); });
+    faster?.addEventListener('click', () => { duration = Math.max(14, duration - 6); apply(); });
+    reverse?.addEventListener('click', () => { direction = (direction === 'normal') ? 'reverse' : 'normal'; apply(); });
 
-    const animateScrollLeft = (el, to, duration = 520) => {
-      const start = el.scrollLeft;
-      const change = to - start;
-      const startTime = performance.now();
-
-      const step = (now) => {
-        const t = Math.min(1, (now - startTime) / duration);
-        el.scrollLeft = start + change * easeInOutCubic(t);
-        if (t < 1) requestAnimationFrame(step);
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    const scrollToIndex = (i, duration = 520) => {
-      const idx = clamp(i, 0, slides.length - 1);
-      const s = slides[idx];
-      const left = s.offsetLeft - (track.clientWidth / 2) + (s.offsetWidth / 2);
-      animateScrollLeft(track, Math.max(0, left), duration);
-    };
-
-    const onPrev = () => scrollToIndex(getClosestIndex() - 1);
-    const onNext = () => scrollToIndex(getClosestIndex() + 1);
-
-    prev?.addEventListener('click', onPrev);
-    next?.addEventListener('click', onNext);
-    prevM?.addEventListener('click', onPrev);
-    nextM?.addEventListener('click', onNext);
-
-    // Keyboard support when focused anywhere in the carousel
-    track.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') { e.preventDefault(); onPrev(); }
-      if (e.key === 'ArrowRight') { e.preventDefault(); onNext(); }
-    });
-    track.setAttribute('tabindex', '0');
-
-    // ---------- SMOOTH AUTOSCROLL (no looping snap, no native smooth fights) ----------
-    let raf = null;
-    let isPaused = false;
-    let last = null;
-
-    // pixels per second (tune)
-    const SPEED = 28;
-
-    const maxScroll = () => track.scrollWidth - track.clientWidth;
-
-    const tick = (ts) => {
-      if (isPaused) { raf = requestAnimationFrame(tick); return; }
-      if (last == null) last = ts;
-
-      const dt = (ts - last) / 1000; // seconds
-      last = ts;
-
-      const nextLeft = track.scrollLeft + SPEED * dt;
-
-      // Wrap smoothly (no snap): jump instantly to start when very near end, then continue
-      if (nextLeft >= maxScroll() - 2) {
-        track.scrollLeft = 0;
-        last = ts;
-      } else {
-        track.scrollLeft = nextLeft;
-      }
-
-      raf = requestAnimationFrame(tick);
-    };
-
-    const start = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    const pause = () => { isPaused = true; };
-    const resume = () => { isPaused = false; };
-
-    // Pause on interaction
-    const hardPause = () => { pause(); };
-    const softResume = () => {
-      // resume after 2.5s so users can finish scrolling
-      setTimeout(() => { resume(); }, 2500);
-    };
-
-    track.addEventListener('mouseenter', hardPause);
-    track.addEventListener('mouseleave', resume);
-    track.addEventListener('touchstart', hardPause, { passive: true });
-    track.addEventListener('touchend', softResume, { passive: true });
-    track.addEventListener('wheel', () => { hardPause(); softResume(); }, { passive: true });
-
-    [prev, next, prevM, nextM].forEach(btn => {
-      btn?.addEventListener('click', () => { hardPause(); softResume(); });
+    // Mobile: tap to pause/resume
+    let paused = false;
+    track.addEventListener('click', () => {
+      paused = !paused;
+      track.style.animationPlayState = paused ? 'paused' : 'running';
     });
 
-    // Important: native CSS scroll-snap can feel “jerky” during continuous autoscroll.
-    // Disable snap while auto-scrolling, enable it when user interacts.
-    const setSnap = (on) => {
-      track.classList.toggle('snap-mandatory', on);
-      track.classList.toggle('snap-x', on);
-      if (!on) {
-        track.style.scrollSnapType = 'none';
-      } else {
-        track.style.scrollSnapType = '';
-      }
-    };
-
-    // Default: smooth continuous scroll (no snap fighting)
-    setSnap(false);
-
-    // When user interacts, temporarily enable snap so manual scroll feels nice
-    const enableSnapTemporarily = () => {
-      setSnap(true);
-      setTimeout(() => setSnap(false), 1800);
-    };
-
-    track.addEventListener('pointerdown', enableSnapTemporarily);
-    track.addEventListener('touchstart', enableSnapTemporarily, { passive: true });
-    [prev, next, prevM, nextM].forEach(btn => btn?.addEventListener('click', enableSnapTemporarily));
-
-    start();
+    apply();
   });
 </script>
