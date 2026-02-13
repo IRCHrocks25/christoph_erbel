@@ -9,7 +9,7 @@
   </div>
 
   <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-stretch">
 
       <!-- LEFT: Copy (UNCHANGED) -->
       <div class="lg:col-span-6">
@@ -41,13 +41,13 @@
       </div>
 
       <!-- RIGHT: Editorial image composition (UNCHANGED) -->
-      <div class="lg:col-span-6">
-        <div class="relative">
-          <div class="relative overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#0B1B2A]/10">
+      <div class="lg:col-span-6 flex">
+        <div class="relative w-full flex flex-col">
+          <div class="relative overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#0B1B2A]/10 flex-1">
             <img
-              src="{% static 'myApp/images/Section Image (2).png' %}"
+              src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770999166/Section_Image_2_pp7wy5.png"
               alt=""
-              class="h-[420px] w-full object-cover"
+              class="h-full w-full object-cover"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent"></div>
           </div>

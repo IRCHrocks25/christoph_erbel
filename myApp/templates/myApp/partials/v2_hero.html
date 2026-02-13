@@ -1,19 +1,16 @@
 {% load static %}
-<section 
-  id="v2-hero" 
-  class="relative overflow-hidden min-h-[600px] md:min-h-[700px]" 
-  style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1770810854/background_x5qgjq.png'); background-size: cover; background-position: center top; background-repeat: no-repeat;"
+<section
+  id="v2-hero"
+  class="relative overflow-hidden min-h-[600px] md:min-h-[700px] pt-40 md:pt-48 pb-0"
+  style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1770810854/background_x5qgjq.png'); background-size: cover; background-position: center top; background-repeat: no-repeat; margin-top: 40px;"
 >
-
   <!-- ===== Content ===== -->
-  <div class="relative mx-auto max-w-7xl px-8 sm:px-12 md:px-16 lg:px-20 pt-32 sm:pt-40 md:pt-48 pb-16 sm:pb-20 md:pb-24">
-    <div class="flex items-center min-h-[500px] md:min-h-[600px] gap-8 lg:gap-12">
-      
+  <div class="relative mx-auto max-w-7xl px-8 sm:px-12 md:px-16 lg:px-20 pb-0">
+    <div class="flex items-center min-h-[420px] md:min-h-[520px] gap-8 lg:gap-12">
       <!-- Left: Text Content -->
       <div class="hero-left-column text-left max-w-3xl relative z-10 flex-1">
-        
         <!-- Large Serif Headline -->
-        <h1 
+        <h1
           class="hero-headline text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] text-[#1C7272] mb-6"
           style="font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.01em;"
         >
@@ -21,7 +18,7 @@
         </h1>
 
         <!-- Secondary Paragraph -->
-        <p 
+        <p
           class="hero-paragraph-1 text-lg sm:text-xl leading-[1.75] text-white/90 mb-6"
           style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 400;"
         >
@@ -29,30 +26,31 @@
         </p>
 
         <!-- Final Body Paragraph -->
-        <p 
+        <p
           class="hero-paragraph-2 text-base sm:text-lg leading-[1.75] text-white/85 max-w-2xl"
           style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 300;"
         >
           You don't need to have it all figured out. You just need someone who's been there and knows the way. I'll walk with you, grounded, compassionate, and present. One step at a time. Because I know what it takes to find your way back home to your Self. And it's a shortcut. Saving lifetime and life-energy.
         </p>
-
       </div>
 
       <!-- Spacer for layout balance -->
       <div class="hidden md:block flex-1"></div>
-
     </div>
   </div>
 
-  <!-- ===== Right: Hero Image (Centered Pull Logic) ===== -->
-  <div class="hero-right-column hidden md:flex absolute bottom-0 left-1/2 translate-x-[2%] w-1/2 max-w-2xl h-full z-10 items-end justify-start">
-    <img 
-      src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770810865/hero_image_bqobex.png" 
+  <!-- ===== Right: Hero Image (Bottom-Kiss Anchor) ===== -->
+  <div class="hero-right-column hidden md:flex absolute inset-y-0 right-0 w-1/2 max-w-2xl z-10 items-end justify-center pointer-events-none" style="margin-right: 120px; margin-top:150px;">
+    <img
+      src="https://res.cloudinary.com/dcuswyfur/image/upload/v1770997741/hero_image_bqobex_ytqthi.png"
       alt="Hero"
-      class="hero-image h-[85%] w-auto object-contain"
+      class="hero-image w-auto object-contain"
+      style="height: 110%; max-height: 110%; transform: scale(1.15);"
     />
   </div>
 
+  <!-- Optional: subtle grounding fade so the “feet” feel anchored -->
+  <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
 </section>
 
 <style>
@@ -70,13 +68,13 @@
 
   .hero-right-column {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(80px);
     animation: slideInFromRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
   }
 
   .hero-image {
     opacity: 0;
-    transform: translateX(100px) scale(0.9);
+    transform: translateX(80px) scale(0.92);
     animation: slideInImage 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
   }
 
@@ -100,47 +98,23 @@
   }
 
   @keyframes slideInFromLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
 
   @keyframes slideInFromRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    0% { opacity: 0; transform: translateX(80px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
 
   @keyframes slideInImage {
-    0% {
-      opacity: 0;
-      transform: translateX(100px) scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
+    0% { opacity: 0; transform: translateX(80px) scale(0.92); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
   }
 
   @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   /* Smooth entrance for the entire hero section */
@@ -149,11 +123,7 @@
   }
 
   @keyframes heroEntrance {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 </style>
